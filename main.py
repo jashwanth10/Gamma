@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import (
     QMainWindow
 )
 from components.interface import Ui_MainWindow
+from screens.energyvalidation import EnergyValidation
 from screens.initialmetrics import InitialMetrics
 from screens.profile import Profile
 from utils.cnf_utils import read_cnf_file
@@ -12,7 +13,6 @@ from screens.toolbar import Toolbar
 from screens.uploadfile import UploadFile
 from utils.processor import Processor
 from screens.screens import Screen
-
 
 
 class MainWindow(QMainWindow):
@@ -25,7 +25,6 @@ class MainWindow(QMainWindow):
 
         # self.initiate_actions()
         self.initiate_processors()
-
 
     def initiate_processors(self):
         file_u = "./config/calibration data/IAEA-U.CNF"
@@ -41,12 +40,7 @@ class MainWindow(QMainWindow):
         self.screens[Screen.HOME] = Home(ui)
         self.screens[Screen.UPLOAD_FILE] = UploadFile(ui, main_window=self, toolbar=self.screens[Screen.TOOLBAR])
         self.screens[Screen.INITIAL_METRICS] = InitialMetrics(ui, self)
-        self.screens[Screen.PROFILE_PAGE] = Profile(ui)
-
-        pass
-
-    def switch_page(self, index):
-        self.ui.stackedWidget.setCurrentIndex(index)
+        self.screens[Screen.PROFILE_PAGE] = Profile(ui, self)
 
 
 

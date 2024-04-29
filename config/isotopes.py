@@ -1,67 +1,91 @@
 ISOTOPES = {
     "energy_46" : {
+        "name": "Pb-210",
         "energy": 46.539,
+        "ref": 0.60,
         "limit_BE_Rpic" : [1, 1.2],
         "limit_HE_Rpic" : [0.9, 1.2],
         "nb_canaux_BFBE" : 8,
         "nb_canaux_BFHE" : 7,
-        "larger_region_pic" : 3
+        "larger_region_pic" : 3,
+        "range" : 57,
     },
     "energy_239" : {
+        "name": "Pb-212",
         "energy": 238.632,
+        "ref": 0.84,
         "limit_BE_Rpic" : [1.5, 4],
         "limit_HE_Rpic" : [1.3, 6],
         "nb_canaux_BFBE" : 20,
         "nb_canaux_BFHE" : 20,
-        "larger_region_pic" : 3
+        "larger_region_pic" : 3,
+        "range": 129,
     },
     "energy_295" : {
+        "name": "Pb-214",
         "energy": 295.2228,
+        "ref": 0.93,
         "limit_BE_Rpic" : [1.5, 2],
         "limit_HE_Rpic" : [1.7, 7],
         "nb_canaux_BFBE" : 20,
         "nb_canaux_BFHE" : 20,
-        "larger_region_pic" : 3
+        "larger_region_pic" : 3,
+        "range": 129,
     },
     "energy_338" : {
+        "name": "Ac-228",
         "energy": 338.32,
+        "ref": 0.96,
         "limit_BE_Rpic" : [1.5, 1.5],
         "limit_HE_Rpic" : [1.5, 4],
         "nb_canaux_BFBE" : 15,
         "nb_canaux_BFHE" : 20,
-        "larger_region_pic" : 3
+        "larger_region_pic" : 3,
+        "range": 127,
     },
-    "energy_351" : {
+    "energy_351": {
+        "name": "Pb-214",
         "energy": 351.9321,
-        "limit_BE_Rpic" : [1.8, 2],
-        "limit_HE_Rpic" : [1.8, 2],
-        "nb_canaux_BFBE" : 20,
-        "nb_canaux_BFHE" : 20,
-        "larger_region_pic" : 3
+        "ref": 1.02,
+        "limit_BE_Rpic": [1.8, 2],
+        "limit_HE_Rpic": [1.8, 2],
+        "nb_canaux_BFBE": 20,
+        "nb_canaux_BFHE": 20,
+        "larger_region_pic": 3,
+        "range": 129,
     },
     "energy_609" : {
+        "name": "Bi-214",
         "energy": 609.32,
-        "limit_BE_Rpic" : [2, 2],
-        "limit_HE_Rpic" : [1.8, 2],
-        "nb_canaux_BFBE" : 20,
-        "nb_canaux_BFHE" : 20,
-        "larger_region_pic" : 3
+        "ref": 1.25,
+        "limit_BE_Rpic": [2, 2],
+        "limit_HE_Rpic": [1.8, 2],
+        "nb_canaux_BFBE": 20,
+        "nb_canaux_BFHE": 20,
+        "larger_region_pic": 3,
+        "range": 129
     },
-    "energy_911" : {
+    "energy_911": {
+        "name": "Ac-228",
         "energy": 911.204,
-        "limit_BE_Rpic" : [2.3, 2],
-        "limit_HE_Rpic" : [2.2, 2],
-        "nb_canaux_BFBE" : 15,
-        "nb_canaux_BFHE" : 20,
-        "larger_region_pic" : 3
+        "ref": 1.53,
+        "limit_BE_Rpic": [2.3, 2],
+        "limit_HE_Rpic": [2.2, 2],
+        "nb_canaux_BFBE": 15,
+        "nb_canaux_BFHE": 20,
+        "larger_region_pic": 3,
+        "range": 258
     },
-    "energy_1460" : {
+    "energy_1460": {
+        "name": "K-40",
         "energy": 1460.83,
-        "limit_BE_Rpic" : [2.5, 3],
-        "limit_HE_Rpic" : [2.5, 3],
-        "nb_canaux_BFBE" : 20,
-        "nb_canaux_BFHE" : 20,
-        "larger_region_pic" : 3
+        "ref": 2.02,
+        "limit_BE_Rpic": [2.5, 3],
+        "limit_HE_Rpic": [2.5, 3],
+        "nb_canaux_BFBE": 20,
+        "nb_canaux_BFHE": 20,
+        "larger_region_pic": 3,
+        "range": 258
     },
 
 }

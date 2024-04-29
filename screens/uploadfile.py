@@ -25,6 +25,7 @@ class UploadFile:
             self.ui.stackedWidget.setCurrentIndex(2)
             self.toolbar.file_uploaded_state()
 
+
         except:
             print("File Upload failed")
 

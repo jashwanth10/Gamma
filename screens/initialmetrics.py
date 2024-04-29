@@ -1,4 +1,5 @@
 from components.interface import Ui_MainWindow
+from screens.screens import Screen
 from utils.cnf_utils import read_cnf_file
 from utils.file_upload import open_dialog
 from utils.processor import Processor
