@@ -480,29 +480,6 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget2)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.profile_1_button = QtWidgets.QPushButton(parent=self.layoutWidget2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.profile_1_button.sizePolicy().hasHeightForWidth())
-        self.profile_1_button.setSizePolicy(sizePolicy)
-        self.profile_1_button.setStyleSheet("  background-color: #0095ff;\n"
-"  border-radius: 3px;\n"
-"color: #fff;")
-        self.profile_1_button.setObjectName("profile_1_button")
-        self.gridLayout.addWidget(self.profile_1_button, 0, 0, 1, 1)
-        self.profile_2_button = QtWidgets.QPushButton(parent=self.layoutWidget2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.profile_2_button.sizePolicy().hasHeightForWidth())
-        self.profile_2_button.setSizePolicy(sizePolicy)
-        self.profile_2_button.setBaseSize(QtCore.QSize(1, 0))
-        self.profile_2_button.setStyleSheet("  background-color: #0095ff;\n"
-"  border-radius: 3px;\n"
-"color: #fff;")
-        self.profile_2_button.setObjectName("profile_2_button")
-        self.gridLayout.addWidget(self.profile_2_button, 0, 1, 1, 1)
         self.pushButton_7 = QtWidgets.QPushButton(parent=self.layoutWidget2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -513,7 +490,7 @@ class Ui_MainWindow(object):
 "  border-radius: 3px;\n"
 "color: #fff;")
         self.pushButton_7.setObjectName("pushButton_7")
-        self.gridLayout.addWidget(self.pushButton_7, 0, 2, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_7, 0, 0, 1, 1)
         self.stackedWidget.addWidget(self.profile_page)
         self.energy_validation_page = QtWidgets.QWidget()
         self.energy_validation_page.setObjectName("energy_validation_page")
@@ -537,14 +514,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.label_12)
         self.validation_isotope_dropdown = QtWidgets.QComboBox(parent=self.layoutWidget3)
         self.validation_isotope_dropdown.setObjectName("validation_isotope_dropdown")
-        self.validation_isotope_dropdown.addItem("")
-        self.validation_isotope_dropdown.addItem("")
-        self.validation_isotope_dropdown.addItem("")
-        self.validation_isotope_dropdown.addItem("")
-        self.validation_isotope_dropdown.addItem("")
-        self.validation_isotope_dropdown.addItem("")
-        self.validation_isotope_dropdown.addItem("")
-        self.validation_isotope_dropdown.addItem("")
         self.validation_isotope_dropdown.addItem("")
         self.horizontalLayout_4.addWidget(self.validation_isotope_dropdown)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
@@ -593,50 +562,6 @@ class Ui_MainWindow(object):
 "}")
         self.analyze_button.setObjectName("analyze_button")
         self.horizontalLayout_4.addWidget(self.analyze_button)
-        self.add_peak_button = QtWidgets.QPushButton(parent=self.layoutWidget3)
-        self.add_peak_button.setStyleSheet("\n"
-"  background-color: #0095ff;\n"
-"  border: 1px solid transparent;\n"
-"  border-radius: 3px;\n"
-"  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;\n"
-"  box-sizing: border-box;\n"
-"  color: #fff;\n"
-"  cursor: pointer;\n"
-"  display: inline-block;\n"
-"  font-family: -apple-system,system-ui,\"Segoe UI\",\"Liberation Sans\",sans-serif;\n"
-"  font-size: 13px;\n"
-"  font-weight: 400;\n"
-"  line-height: 1.15385;\n"
-"  margin: 0;\n"
-"  outline: none;\n"
-"  padding: 8px .8em;\n"
-"  position: relative;\n"
-"  text-align: center;\n"
-"  text-decoration: none;\n"
-"  user-select: none;\n"
-"  -webkit-user-select: none;\n"
-"  touch-action: manipulation;\n"
-"vertical-align: baseline;\n"
-"white-space: nowrap;\n"
-"\n"
-"hover {\n"
-"  background-color: #07c;\n"
-"}\n"
-"\n"
-"focus {\n"
-"  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);\n"
-"}\n"
-"\n"
-"hover {\n"
-"  background-color: #07c;\n"
-"}\n"
-"\n"
-"active {\n"
-"  background-color: #0064bd;\n"
-"  box-shadow: none;\n"
-"}")
-        self.add_peak_button.setObjectName("add_peak_button")
-        self.horizontalLayout_4.addWidget(self.add_peak_button)
         self.del_peak_button = QtWidgets.QPushButton(parent=self.layoutWidget3)
         self.del_peak_button.setStyleSheet("\n"
 "  background-color: #0095ff;\n"
@@ -682,14 +607,14 @@ class Ui_MainWindow(object):
         self.del_peak_button.setObjectName("del_peak_button")
         self.horizontalLayout_4.addWidget(self.del_peak_button)
         self.tabWidget = QtWidgets.QTabWidget(parent=self.energy_validation_page)
-        self.tabWidget.setGeometry(QtCore.QRect(20, 190, 971, 311))
+        self.tabWidget.setGeometry(QtCore.QRect(10, 180, 991, 371))
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
-        self.widget1 = QtWidgets.QWidget(parent=self.tab)
-        self.widget1.setGeometry(QtCore.QRect(0, 10, 961, 251))
-        self.widget1.setObjectName("widget1")
-        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.widget1)
+        self.layoutWidget4 = QtWidgets.QWidget(parent=self.tab)
+        self.layoutWidget4.setGeometry(QtCore.QRect(0, 10, 981, 271))
+        self.layoutWidget4.setObjectName("layoutWidget4")
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.layoutWidget4)
         self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_14.setObjectName("horizontalLayout_14")
         self.residual_layout = QtWidgets.QVBoxLayout()
@@ -704,9 +629,197 @@ class Ui_MainWindow(object):
         self.energyVchannel_layout.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetMaximumSize)
         self.energyVchannel_layout.setObjectName("energyVchannel_layout")
         self.horizontalLayout_14.addLayout(self.energyVchannel_layout)
+        self.save_profile_button = QtWidgets.QPushButton(parent=self.tab)
+        self.save_profile_button.setGeometry(QtCore.QRect(420, 290, 151, 41))
+        self.save_profile_button.setStyleSheet("\n"
+"  background-color: #0095ff;\n"
+"  border: 1px solid transparent;\n"
+"  border-radius: 3px;\n"
+"  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;\n"
+"  box-sizing: border-box;\n"
+"  color: #fff;\n"
+"  cursor: pointer;\n"
+"  display: inline-block;\n"
+"  font-family: -apple-system,system-ui,\"Segoe UI\",\"Liberation Sans\",sans-serif;\n"
+"  font-size: 13px;\n"
+"  font-weight: 400;\n"
+"  line-height: 1.15385;\n"
+"  margin: 0;\n"
+"  outline: none;\n"
+"  padding: 8px .8em;\n"
+"  position: relative;\n"
+"  text-align: center;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  -webkit-user-select: none;\n"
+"  touch-action: manipulation;\n"
+"vertical-align: baseline;\n"
+"white-space: nowrap;\n"
+"\n"
+"hover {\n"
+"  background-color: #07c;\n"
+"}\n"
+"\n"
+"focus {\n"
+"  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);\n"
+"}\n"
+"\n"
+"hover {\n"
+"  background-color: #07c;\n"
+"}\n"
+"\n"
+"active {\n"
+"  background-color: #0064bd;\n"
+"  box-shadow: none;\n"
+"}")
+        self.save_profile_button.setObjectName("save_profile_button")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
+        self.add_peak_button = QtWidgets.QPushButton(parent=self.tab_2)
+        self.add_peak_button.setGeometry(QtCore.QRect(390, 280, 171, 41))
+        self.add_peak_button.setStyleSheet("\n"
+"  background-color: #0095ff;\n"
+"  border: 1px solid transparent;\n"
+"  border-radius: 3px;\n"
+"  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;\n"
+"  box-sizing: border-box;\n"
+"  color: #fff;\n"
+"  cursor: pointer;\n"
+"  display: inline-block;\n"
+"  font-family: -apple-system,system-ui,\"Segoe UI\",\"Liberation Sans\",sans-serif;\n"
+"  font-size: 13px;\n"
+"  font-weight: 400;\n"
+"  line-height: 1.15385;\n"
+"  margin: 0;\n"
+"  outline: none;\n"
+"  padding: 8px .8em;\n"
+"  position: relative;\n"
+"  text-align: center;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  -webkit-user-select: none;\n"
+"  touch-action: manipulation;\n"
+"vertical-align: baseline;\n"
+"white-space: nowrap;\n"
+"\n"
+"hover {\n"
+"  background-color: #07c;\n"
+"}\n"
+"\n"
+"focus {\n"
+"  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);\n"
+"}\n"
+"\n"
+"hover {\n"
+"  background-color: #07c;\n"
+"}\n"
+"\n"
+"active {\n"
+"  background-color: #0064bd;\n"
+"  box-shadow: none;\n"
+"}")
+        self.add_peak_button.setObjectName("add_peak_button")
+        self.widget1 = QtWidgets.QWidget(parent=self.tab_2)
+        self.widget1.setGeometry(QtCore.QRect(360, 10, 241, 257))
+        self.widget1.setObjectName("widget1")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.widget1)
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.label_17 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_17.setObjectName("label_17")
+        self.horizontalLayout_9.addWidget(self.label_17)
+        self.isotope_name = QtWidgets.QLineEdit(parent=self.widget1)
+        self.isotope_name.setObjectName("isotope_name")
+        self.horizontalLayout_9.addWidget(self.isotope_name)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_9)
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.label_18 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_18.setObjectName("label_18")
+        self.horizontalLayout_12.addWidget(self.label_18)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_12.addItem(spacerItem1)
+        self.energy_value = QtWidgets.QLineEdit(parent=self.widget1)
+        self.energy_value.setObjectName("energy_value")
+        self.horizontalLayout_12.addWidget(self.energy_value)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_12)
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.label_25 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_25.setObjectName("label_25")
+        self.horizontalLayout_18.addWidget(self.label_25)
+        self.he_rpic_left = QtWidgets.QLineEdit(parent=self.widget1)
+        self.he_rpic_left.setObjectName("he_rpic_left")
+        self.horizontalLayout_18.addWidget(self.he_rpic_left)
+        self.he_rpic_right = QtWidgets.QLineEdit(parent=self.widget1)
+        self.he_rpic_right.setObjectName("he_rpic_right")
+        self.horizontalLayout_18.addWidget(self.he_rpic_right)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_18)
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.label_26 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_26.setObjectName("label_26")
+        self.horizontalLayout_19.addWidget(self.label_26)
+        self.be_rpic_left = QtWidgets.QLineEdit(parent=self.widget1)
+        self.be_rpic_left.setText("")
+        self.be_rpic_left.setObjectName("be_rpic_left")
+        self.horizontalLayout_19.addWidget(self.be_rpic_left)
+        self.be_rpic_right = QtWidgets.QLineEdit(parent=self.widget1)
+        self.be_rpic_right.setText("")
+        self.be_rpic_right.setObjectName("be_rpic_right")
+        self.horizontalLayout_19.addWidget(self.be_rpic_right)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_19)
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.label_27 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_27.setObjectName("label_27")
+        self.horizontalLayout_22.addWidget(self.label_27)
+        self.nb_canaux_bfbe = QtWidgets.QLineEdit(parent=self.widget1)
+        self.nb_canaux_bfbe.setObjectName("nb_canaux_bfbe")
+        self.horizontalLayout_22.addWidget(self.nb_canaux_bfbe)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_22)
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.label_28 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_28.setObjectName("label_28")
+        self.horizontalLayout_23.addWidget(self.label_28)
+        self.nb_canaux_bfhe = QtWidgets.QLineEdit(parent=self.widget1)
+        self.nb_canaux_bfhe.setObjectName("nb_canaux_bfhe")
+        self.horizontalLayout_23.addWidget(self.nb_canaux_bfhe)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_23)
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.label_29 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_29.setObjectName("label_29")
+        self.horizontalLayout_24.addWidget(self.label_29)
+        self.larger_region_peak = QtWidgets.QLineEdit(parent=self.widget1)
+        self.larger_region_peak.setText("")
+        self.larger_region_peak.setObjectName("larger_region_peak")
+        self.horizontalLayout_24.addWidget(self.larger_region_peak)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_24)
+        self.horizontalLayout_26 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
+        self.label_31 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_31.setObjectName("label_31")
+        self.horizontalLayout_26.addWidget(self.label_31)
+        self.reference_width = QtWidgets.QLineEdit(parent=self.widget1)
+        self.reference_width.setText("")
+        self.reference_width.setObjectName("reference_width")
+        self.horizontalLayout_26.addWidget(self.reference_width)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_26)
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        self.label_30 = QtWidgets.QLabel(parent=self.widget1)
+        self.label_30.setObjectName("label_30")
+        self.horizontalLayout_25.addWidget(self.label_30)
+        self.range_value = QtWidgets.QLineEdit(parent=self.widget1)
+        self.range_value.setText("")
+        self.range_value.setObjectName("range_value")
+        self.horizontalLayout_25.addWidget(self.range_value)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_25)
         self.tabWidget.addTab(self.tab_2, "")
         self.stackedWidget.addWidget(self.energy_validation_page)
         self.peak_analysis_page = QtWidgets.QWidget()
@@ -720,40 +833,40 @@ class Ui_MainWindow(object):
         self.back = QtWidgets.QPushButton(parent=self.peak_analysis_page)
         self.back.setGeometry(QtCore.QRect(50, 10, 75, 24))
         self.back.setObjectName("back")
-        self.layoutWidget4 = QtWidgets.QWidget(parent=self.peak_analysis_page)
-        self.layoutWidget4.setGeometry(QtCore.QRect(40, 350, 941, 181))
-        self.layoutWidget4.setObjectName("layoutWidget4")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget4)
+        self.layoutWidget5 = QtWidgets.QWidget(parent=self.peak_analysis_page)
+        self.layoutWidget5.setGeometry(QtCore.QRect(40, 350, 941, 181))
+        self.layoutWidget5.setObjectName("layoutWidget5")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget5)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.groupBox_2 = QtWidgets.QGroupBox(parent=self.layoutWidget4)
+        self.groupBox_2 = QtWidgets.QGroupBox(parent=self.layoutWidget5)
         self.groupBox_2.setObjectName("groupBox_2")
-        self.layoutWidget5 = QtWidgets.QWidget(parent=self.groupBox_2)
-        self.layoutWidget5.setGeometry(QtCore.QRect(10, 30, 191, 131))
-        self.layoutWidget5.setObjectName("layoutWidget5")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget5)
+        self.layoutWidget6 = QtWidgets.QWidget(parent=self.groupBox_2)
+        self.layoutWidget6.setGeometry(QtCore.QRect(10, 30, 191, 131))
+        self.layoutWidget6.setObjectName("layoutWidget6")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget6)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label_13 = QtWidgets.QLabel(parent=self.layoutWidget5)
+        self.label_13 = QtWidgets.QLabel(parent=self.layoutWidget6)
         self.label_13.setObjectName("label_13")
         self.horizontalLayout_3.addWidget(self.label_13)
-        self.total_hits_bfbe = QtWidgets.QLabel(parent=self.layoutWidget5)
+        self.total_hits_bfbe = QtWidgets.QLabel(parent=self.layoutWidget6)
         self.total_hits_bfbe.setObjectName("total_hits_bfbe")
         self.horizontalLayout_3.addWidget(self.total_hits_bfbe)
         self.verticalLayout_4.addLayout(self.horizontalLayout_3)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label_15 = QtWidgets.QLabel(parent=self.layoutWidget5)
+        self.label_15 = QtWidgets.QLabel(parent=self.layoutWidget6)
         self.label_15.setObjectName("label_15")
         self.horizontalLayout_5.addWidget(self.label_15)
-        self.hits_per_channel_bfbe = QtWidgets.QLabel(parent=self.layoutWidget5)
+        self.hits_per_channel_bfbe = QtWidgets.QLabel(parent=self.layoutWidget6)
         self.hits_per_channel_bfbe.setObjectName("hits_per_channel_bfbe")
         self.horizontalLayout_5.addWidget(self.hits_per_channel_bfbe)
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
         self.horizontalLayout.addWidget(self.groupBox_2)
-        self.groupBox_3 = QtWidgets.QGroupBox(parent=self.layoutWidget4)
+        self.groupBox_3 = QtWidgets.QGroupBox(parent=self.layoutWidget5)
         self.groupBox_3.setObjectName("groupBox_3")
         self.layoutWidget_5 = QtWidgets.QWidget(parent=self.groupBox_3)
         self.layoutWidget_5.setGeometry(QtCore.QRect(10, 30, 191, 131))
@@ -780,7 +893,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.addWidget(self.hits_per_channel_bfhe)
         self.verticalLayout_5.addLayout(self.horizontalLayout_11)
         self.horizontalLayout.addWidget(self.groupBox_3)
-        self.groupBox_4 = QtWidgets.QGroupBox(parent=self.layoutWidget4)
+        self.groupBox_4 = QtWidgets.QGroupBox(parent=self.layoutWidget5)
         self.groupBox_4.setObjectName("groupBox_4")
         self.layoutWidget_6 = QtWidgets.QWidget(parent=self.groupBox_4)
         self.layoutWidget_6.setGeometry(QtCore.QRect(10, 30, 191, 131))
@@ -807,7 +920,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_17.addWidget(self.num_channels_peak)
         self.verticalLayout_8.addLayout(self.horizontalLayout_17)
         self.horizontalLayout.addWidget(self.groupBox_4)
-        self.groupBox_5 = QtWidgets.QGroupBox(parent=self.layoutWidget4)
+        self.groupBox_5 = QtWidgets.QGroupBox(parent=self.layoutWidget5)
         self.groupBox_5.setObjectName("groupBox_5")
         self.layoutWidget_8 = QtWidgets.QWidget(parent=self.groupBox_5)
         self.layoutWidget_8.setGeometry(QtCore.QRect(10, 30, 191, 131))
@@ -834,40 +947,40 @@ class Ui_MainWindow(object):
         self.horizontalLayout_21.addWidget(self.num_channels_peak_2)
         self.verticalLayout_9.addLayout(self.horizontalLayout_21)
         self.horizontalLayout.addWidget(self.groupBox_5)
-        self.layoutWidget6 = QtWidgets.QWidget(parent=self.peak_analysis_page)
-        self.layoutWidget6.setGeometry(QtCore.QRect(620, 90, 261, 151))
-        self.layoutWidget6.setObjectName("layoutWidget6")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.layoutWidget6)
+        self.layoutWidget7 = QtWidgets.QWidget(parent=self.peak_analysis_page)
+        self.layoutWidget7.setGeometry(QtCore.QRect(620, 90, 261, 151))
+        self.layoutWidget7.setObjectName("layoutWidget7")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.layoutWidget7)
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label_37 = QtWidgets.QLabel(parent=self.layoutWidget6)
+        self.label_37 = QtWidgets.QLabel(parent=self.layoutWidget7)
         self.label_37.setObjectName("label_37")
         self.gridLayout_2.addWidget(self.label_37, 2, 0, 1, 1)
-        self.label_35 = QtWidgets.QLabel(parent=self.layoutWidget6)
+        self.label_35 = QtWidgets.QLabel(parent=self.layoutWidget7)
         self.label_35.setObjectName("label_35")
         self.gridLayout_2.addWidget(self.label_35, 1, 0, 1, 1)
-        self.label_33 = QtWidgets.QLabel(parent=self.layoutWidget6)
+        self.label_33 = QtWidgets.QLabel(parent=self.layoutWidget7)
         self.label_33.setObjectName("label_33")
         self.gridLayout_2.addWidget(self.label_33, 0, 0, 1, 1)
-        self.fwhm = QtWidgets.QLabel(parent=self.layoutWidget6)
+        self.fwhm = QtWidgets.QLabel(parent=self.layoutWidget7)
         self.fwhm.setObjectName("fwhm")
         self.gridLayout_2.addWidget(self.fwhm, 2, 1, 1, 1)
-        self.channel_peak = QtWidgets.QLabel(parent=self.layoutWidget6)
+        self.channel_peak = QtWidgets.QLabel(parent=self.layoutWidget7)
         self.channel_peak.setObjectName("channel_peak")
         self.gridLayout_2.addWidget(self.channel_peak, 0, 1, 1, 1)
-        self.energy_peak = QtWidgets.QLabel(parent=self.layoutWidget6)
+        self.energy_peak = QtWidgets.QLabel(parent=self.layoutWidget7)
         self.energy_peak.setObjectName("energy_peak")
         self.gridLayout_2.addWidget(self.energy_peak, 1, 1, 1, 1)
-        self.widget2 = QtWidgets.QWidget(parent=self.peak_analysis_page)
-        self.widget2.setGeometry(QtCore.QRect(350, 10, 158, 26))
-        self.widget2.setObjectName("widget2")
-        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.widget2)
+        self.layoutWidget8 = QtWidgets.QWidget(parent=self.peak_analysis_page)
+        self.layoutWidget8.setGeometry(QtCore.QRect(350, 10, 158, 26))
+        self.layoutWidget8.setObjectName("layoutWidget8")
+        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.layoutWidget8)
         self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        self.pa_prev = QtWidgets.QPushButton(parent=self.widget2)
+        self.pa_prev = QtWidgets.QPushButton(parent=self.layoutWidget8)
         self.pa_prev.setObjectName("pa_prev")
         self.horizontalLayout_13.addWidget(self.pa_prev)
-        self.pa_next = QtWidgets.QPushButton(parent=self.widget2)
+        self.pa_next = QtWidgets.QPushButton(parent=self.layoutWidget8)
         self.pa_next.setObjectName("pa_next")
         self.horizontalLayout_13.addWidget(self.pa_next)
         self.stackedWidget.addWidget(self.peak_analysis_page)
@@ -943,25 +1056,25 @@ class Ui_MainWindow(object):
         self.pushButton_13.setText(_translate("MainWindow", "Browse.."))
         self.label_6.setText(_translate("MainWindow", "Choose a profile to validate:"))
         self.groupBox.setTitle(_translate("MainWindow", "Each Profile contains a set of peaks of interest to be calibrated against"))
-        self.profile_1_button.setText(_translate("MainWindow", "Profile 1"))
-        self.profile_2_button.setText(_translate("MainWindow", "Profile 2"))
         self.pushButton_7.setText(_translate("MainWindow", "Add.."))
         self.label_11.setText(_translate("MainWindow", "Energy Validation Control"))
         self.label_12.setText(_translate("MainWindow", "Isotope:"))
         self.validation_isotope_dropdown.setItemText(0, _translate("MainWindow", "Choose.."))
-        self.validation_isotope_dropdown.setItemText(1, _translate("MainWindow", "Pb-210 (46.539 keV)"))
-        self.validation_isotope_dropdown.setItemText(2, _translate("MainWindow", "Pb-212 (238.632 keV)"))
-        self.validation_isotope_dropdown.setItemText(3, _translate("MainWindow", "Pb-214 (295.2228 keV)"))
-        self.validation_isotope_dropdown.setItemText(4, _translate("MainWindow", "Ac-228 (338.32 keV)"))
-        self.validation_isotope_dropdown.setItemText(5, _translate("MainWindow", "Pb-214 (351.9321 keV)"))
-        self.validation_isotope_dropdown.setItemText(6, _translate("MainWindow", "Bi-214 (609.32 keV)"))
-        self.validation_isotope_dropdown.setItemText(7, _translate("MainWindow", "Ac-228 (911.204 keV)"))
-        self.validation_isotope_dropdown.setItemText(8, _translate("MainWindow", "K-40 (1460.83 keV)"))
         self.analyze_button.setText(_translate("MainWindow", "Analyze"))
-        self.add_peak_button.setText(_translate("MainWindow", "Add Peak"))
         self.del_peak_button.setText(_translate("MainWindow", "Delete Peak"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Tab 1"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Tab 2"))
+        self.save_profile_button.setText(_translate("MainWindow", "Save Profile"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Visual Analysis"))
+        self.add_peak_button.setText(_translate("MainWindow", "Add Peak"))
+        self.label_17.setText(_translate("MainWindow", "Name Of Isotope:"))
+        self.label_18.setText(_translate("MainWindow", "Energy(keV):"))
+        self.label_25.setText(_translate("MainWindow", "limit HE Rpic:"))
+        self.label_26.setText(_translate("MainWindow", "limit BE Rpic:"))
+        self.label_27.setText(_translate("MainWindow", "nb canaux BFBE:"))
+        self.label_28.setText(_translate("MainWindow", "nb canaux BFHE:"))
+        self.label_29.setText(_translate("MainWindow", "larger region peak:"))
+        self.label_31.setText(_translate("MainWindow", "Reference width:"))
+        self.label_30.setText(_translate("MainWindow", "Range of channels:"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Add Peak to Profile"))
         self.back.setText(_translate("MainWindow", "Back"))
         self.groupBox_2.setTitle(_translate("MainWindow", "BFBE"))
         self.label_13.setText(_translate("MainWindow", "Total hits: "))

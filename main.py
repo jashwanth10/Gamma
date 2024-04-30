@@ -46,6 +46,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
 
+    database_path = 'database/db.minidb'
     app = QApplication(sys.argv)
     window = MainWindow()
     ui = Ui_MainWindow()

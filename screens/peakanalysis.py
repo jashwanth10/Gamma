@@ -5,8 +5,9 @@ from screens.screens import Screen
 
 class PeakAnalysis:
 
-    def __init__(self, ui: Ui_MainWindow, window=None, processor=None, data=None):
+    def __init__(self, isotope_data, ui: Ui_MainWindow, window=None, processor=None, data=None):
         self.ui = ui
+        self.isotope_data = isotope_data
         self.processor = processor
         self.window = window
         self.data = data
@@ -22,7 +23,9 @@ class PeakAnalysis:
         for i in reversed(range(self.ui.verticalLayout_2.count())):
             self.ui.verticalLayout_2.itemAt(i).widget().setParent(None)
         values = self.processor.perform_peak_analysis(window=self.window, layout=self.ui.verticalLayout_2,
-                                                      index=(self.data["index"] + 1) % len(list(ISOTOPES.keys())))
+                                                      index=(self.data["index"] + 1) % len(
+                                                          list(self.isotope_data.keys())),
+                                                      isotope_data=self.isotope_data)
 
         self.data = values
         self.populate_page()
@@ -32,7 +35,9 @@ class PeakAnalysis:
         for i in reversed(range(self.ui.verticalLayout_2.count())):
             self.ui.verticalLayout_2.itemAt(i).widget().setParent(None)
         values = self.processor.perform_peak_analysis(window=self.window, layout=self.ui.verticalLayout_2,
-                                                      index=(self.data["index"] - 1) % len(list(ISOTOPES.keys())))
+                                                      index=(self.data["index"] - 1) % len(
+                                                          list(self.isotope_data.keys())),
+                                                      isotope_data=self.isotope_data)
         self.data = values
         self.populate_page()
         pass

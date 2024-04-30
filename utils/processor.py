@@ -7,7 +7,6 @@ from matplotlib.backends.backend_template import FigureCanvas
 matplotlib.use('QtAgg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
-from config.isotopes import ISOTOPES
 import numpy as np
 import pyqtgraph as pg
 
@@ -54,17 +53,13 @@ class Processor:
         self.interest_region_counts = {}
         self.interest_region_energies = {}
         self.interest_region_indices = {}
-        self.active_isotopes = list(ISOTOPES.keys())
-        self.added_isotopes = {}
-        self.deleted_isotopes = []
-        self.analyze()
         pass
 
-    def analyze(self):
-        self.calculate_interest_region()
-        self.calculate_fwhm()
-        self.calculate_peak_positions()
-        self.calculate_narrow_peak_portion()
+    def analyze(self, isotope_data):
+        self.calculate_interest_region(isotope_data)
+        self.calculate_fwhm(isotope_data)
+        self.calculate_peak_positions(isotope_data)
+        self.calculate_narrow_peak_portion(isotope_data)
 
     def _peak_calibration(self, pos):
         return self.data["Energy coefficients"][0]*(pos**0) \
@@ -80,10 +75,10 @@ class Processor:
         lower_ind = _max_index_less_than(self.energies, energy)
         return lower_ind
 
-    def calculate_peak_positions(self):
-        for key in ISOTOPES.keys():
-            lower = ISOTOPES[key]["energy"] - ISOTOPES[key]["limit_BE_Rpic"][0]
-            upper = ISOTOPES[key]["energy"] + ISOTOPES[key]["limit_HE_Rpic"][0]
+    def calculate_peak_positions(self, isotope_data):
+        for key in isotope_data.keys():
+            lower = isotope_data[key]["energy"] - isotope_data[key]["limit_BE_Rpic"][0]
+            upper = isotope_data[key]["energy"] + isotope_data[key]["limit_HE_Rpic"][0]
             lower_ind, upper_ind = self._extract_portions(lower, upper)
             counts_portion = self.counts[lower_ind:upper_ind+1]
             channels_portion = self.channels[lower_ind:upper_ind+1]
@@ -97,40 +92,40 @@ class Processor:
             self.peaks[key] = channels_portion[np.argmax(counts_portion)]
             self.energy_portion[key] = energy_portion[np.argmax(counts_portion)]
 
-    def calculate_interest_region(self):
-        for key in ISOTOPES.keys():
-            lower = ISOTOPES[key]["energy"] - ISOTOPES[key]["limit_BE_Rpic"][1]
-            left_index = self._extract_index(lower) - 2*ISOTOPES[key]["nb_canaux_BFBE"]
-            right_index = left_index + ISOTOPES[key]["range"]
+    def calculate_interest_region(self, isotope_data):
+        for key in isotope_data.keys():
+            lower = isotope_data[key]["energy"] - isotope_data[key]["limit_BE_Rpic"][1]
+            left_index = self._extract_index(lower) - 2*isotope_data[key]["nb_canaux_BFBE"]
+            right_index = left_index + isotope_data[key]["range"]
             self.interest_region_energies[key] = self.energies[left_index:right_index+1]
             self.interest_region_indices[key] = list([left_index, right_index])
             self.interest_region_counts[key] = self.counts[left_index:right_index+1]
 
-    def calculate_fwhm(self):
-        for key in ISOTOPES.keys():
-            lower = ISOTOPES[key]["energy"] - ISOTOPES[key]["limit_BE_Rpic"][0]
-            upper = ISOTOPES[key]["energy"] + ISOTOPES[key]["limit_HE_Rpic"][0]
+    def calculate_fwhm(self, isotope_data):
+        for key in isotope_data.keys():
+            lower = isotope_data[key]["energy"] - isotope_data[key]["limit_BE_Rpic"][0]
+            upper = isotope_data[key]["energy"] + isotope_data[key]["limit_HE_Rpic"][0]
             lower_ind, upper_ind = self._extract_portions(lower, upper)
 
-            energy_val_left = ISOTOPES[key]["energy"] - ISOTOPES[key]["limit_BE_Rpic"][1]
+            energy_val_left = isotope_data[key]["energy"] - isotope_data[key]["limit_BE_Rpic"][1]
             left_index = self._extract_index(energy_val_left)
-            left_count_portion = np.array(self.counts[left_index - ISOTOPES[key]["nb_canaux_BFBE"]:left_index+1])
+            left_count_portion = np.array(self.counts[left_index - isotope_data[key]["nb_canaux_BFBE"]:left_index+1])
             left_coups_total = np.sum(left_count_portion)
-            left_coups_per_canal = left_coups_total/ISOTOPES[key]["nb_canaux_BFHE"]
+            left_coups_per_canal = left_coups_total/isotope_data[key]["nb_canaux_BFHE"]
             self.BFBE[key] = {}
             self.BFBE[key]["total_hits"] = left_coups_total
             self.BFBE[key]["hits_per_channel"] = left_coups_per_canal
-            self.BFBE[key]["indices"] = (left_index - ISOTOPES[key]["nb_canaux_BFBE"], left_index+1)
+            self.BFBE[key]["indices"] = (left_index - isotope_data[key]["nb_canaux_BFBE"], left_index+1)
 
-            energy_val_right = ISOTOPES[key]["energy"] + ISOTOPES[key]["limit_HE_Rpic"][1]
+            energy_val_right = isotope_data[key]["energy"] + isotope_data[key]["limit_HE_Rpic"][1]
             right_index = self._extract_index(energy_val_right)
-            right_count_portion = np.array(self.counts[right_index:right_index+ISOTOPES[key]["nb_canaux_BFHE"]+1])
+            right_count_portion = np.array(self.counts[right_index:right_index+isotope_data[key]["nb_canaux_BFHE"]+1])
             right_coups_total = np.sum(right_count_portion)
-            right_coups_per_canal = right_coups_total/ISOTOPES[key]["nb_canaux_BFHE"]
+            right_coups_per_canal = right_coups_total/isotope_data[key]["nb_canaux_BFHE"]
             self.BFHE[key] = {}
             self.BFHE[key]["total_hits"] = right_coups_total
             self.BFHE[key]["hits_per_channel"] = right_coups_per_canal
-            self.BFHE[key]["indices"] = (right_index, right_index+ISOTOPES[key]["nb_canaux_BFHE"]+1)
+            self.BFHE[key]["indices"] = (right_index, right_index+isotope_data[key]["nb_canaux_BFHE"]+1)
 
             counts_portion = np.array(self.counts[lower_ind:upper_ind+1])
 
@@ -144,10 +139,10 @@ class Processor:
             minus = np.sum(np.multiply(coups_nets, energy_portion))/np.sum(coups_nets)
             self.fwhm[key] = 2.36*np.sqrt((np.sum(np.multiply(coups_nets, np.multiply(energy_portion, energy_portion)))/np.sum(coups_nets)) - minus**2)
 
-    def calculate_narrow_peak_portion(self):
-        for key in ISOTOPES.keys():
-            lower = ISOTOPES[key]["energy"] - ISOTOPES[key]["larger_region_pic"]/2
-            upper = ISOTOPES[key]["energy"] + ISOTOPES[key]["larger_region_pic"]/2
+    def calculate_narrow_peak_portion(self, isotope_data):
+        for key in isotope_data.keys():
+            lower = isotope_data[key]["energy"] - isotope_data[key]["larger_region_pic"]/2
+            upper = isotope_data[key]["energy"] + isotope_data[key]["larger_region_pic"]/2
             lower_ind, upper_ind = self._extract_portions(lower, upper)
             counts_portion = self.counts[lower_ind:upper_ind+1]
             print(key)
@@ -167,16 +162,16 @@ class Processor:
         ui.verticalLayout.addWidget(toolbar)
         ui.verticalLayout.addWidget(sc)
 
-    def display_residual_plot(self, window, layout):
+    def display_residual_plot(self, window, layout, isotope_data):
 
         #y-axis
-        residuals = [self._peak_calibration(self.peaks[key]) - ISOTOPES[key]["energy"] for key in ISOTOPES.keys()]
+        residuals = [self._peak_calibration(self.peaks[key]) - isotope_data[key]["energy"] for key in isotope_data.keys()]
 
         #x-axis
-        energies = [ISOTOPES[key]["energy"] for key in ISOTOPES.keys()]
+        energies = [isotope_data[key]["energy"] for key in isotope_data.keys()]
         pos = [{'pos': (x, y)} for (x, y) in zip(energies, residuals)]
         view = pg.ViewBox()
-        data = [ISOTOPES[key]["name"] for key in ISOTOPES.keys()]
+        data = [isotope_data[key]["name"] for key in isotope_data.keys()]
         scatter = pg.ScatterPlotItem(pos, hoverable=True, data=data)
         view.addItem(scatter)
         plot_item = pg.PlotItem(labels={'left': "residual", 'bottom': "energy(keV)"}, title="Residual-Energy(keV) plot", viewBox=view)
@@ -184,22 +179,22 @@ class Processor:
 
         layout.addWidget(plot_widget)
 
-    def display_fitting_curve(self, window, layout):
+    def display_fitting_curve(self, window, layout, isotope_data):
 
         # Generate residual plot
-        x = np.array([self.peaks[key] for key in ISOTOPES.keys()])
-        y = np.array([self._peak_calibration(self.peaks[key]) for key in ISOTOPES.keys()])
+        x = np.array([self.peaks[key] for key in isotope_data.keys()])
+        y = np.array([self._peak_calibration(self.peaks[key]) for key in isotope_data.keys()])
         plot_widget = pg.plot(x, y, symbol='+')
         layout.addWidget(plot_widget)
 
-    def display_fwhm_plot(self, window, layout):
+    def display_fwhm_plot(self, window, layout, isotope_data):
 
         sc = MplCanvas(width=4, height=4, x_label='energy(keV)', y_label='FWHM')
 
-        x = [self.energy_portion[key] for key in ISOTOPES.keys()]
-        y1 = [ISOTOPES[key]["ref"] for key in ISOTOPES.keys()]
-        y2 = [self.fwhm[key] for key in ISOTOPES.keys()]
-
+        x = [self.energy_portion[key] for key in isotope_data.keys()]
+        y1 = [isotope_data[key]["ref"] for key in isotope_data.keys()]
+        y2 = [self.fwhm[key] for key in isotope_data.keys()]
+        print(y1, y2)
         sc.axes.plot(x, y1, color='r')
         sc.axes.scatter(x, y2)
         sc.axes.set_title("Reference Curve")
@@ -207,9 +202,9 @@ class Processor:
         layout.addWidget(sc)
         layout.addWidget(toolbar)
 
-    def perform_peak_analysis(self, window, layout, index):
+    def perform_peak_analysis(self, window, layout, index, isotope_data):
 
-        key = list(ISOTOPES.keys())[index]
+        key = list(isotope_data.keys())[index]
 
         # Display plot
         x = self.interest_region_energies[key]
@@ -219,8 +214,8 @@ class Processor:
 
         # Peak area
         a = np.zeros(len(self.energies))
-        left = ISOTOPES[key]["energy"] - ISOTOPES[key]["limit_BE_Rpic"][0]
-        right = ISOTOPES[key]["energy"] + ISOTOPES[key]["limit_HE_Rpic"][0]
+        left = isotope_data[key]["energy"] - isotope_data[key]["limit_BE_Rpic"][0]
+        right = isotope_data[key]["energy"] + isotope_data[key]["limit_HE_Rpic"][0]
         left_index, right_index = self._extract_portions(left, right)
         a[left_index:right_index+1] = self.counts[left_index:right_index+1]
         y2 = a[self.interest_region_indices[key][0]: self.interest_region_indices[key][1]+1]
@@ -263,7 +258,7 @@ class Processor:
                 "fwhm": self.fwhm[key],
                 "peak_channel": self.peaks[key],
                 "peak_energy": self.energy_portion[key],
-                "sigma": ISOTOPES[key]["larger_region_pic"] * 2.36 / self.fwhm[key]
+                "sigma": isotope_data[key]["larger_region_pic"] * 2.36 / self.fwhm[key]
             },
             "index": index
         }

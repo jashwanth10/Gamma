@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9df49348-a9ca-4ffe-b76b-6b14d7296fd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/screens/peakanalysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/isotopes.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/isotopes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/energyvalidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/energyvalidation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/initialmetrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/initialmetrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/peakanalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/peakanalysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/screens.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/uploadfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/uploadfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/processor.py" afterDir="false" />
     </list>
@@ -54,7 +51,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/SBU/Spring-2024/AP/knowledge-base&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/SBU/Spring-2024/RPA/test&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>

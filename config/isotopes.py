@@ -1,5 +1,5 @@
 ISOTOPES = {
-    "energy_46" : {
+    "Pb-210" : {
         "name": "Pb-210",
         "energy": 46.539,
         "ref": 0.60,
@@ -10,7 +10,7 @@ ISOTOPES = {
         "larger_region_pic" : 3,
         "range" : 57,
     },
-    "energy_239" : {
+    "Pb-212" : {
         "name": "Pb-212",
         "energy": 238.632,
         "ref": 0.84,
@@ -21,7 +21,7 @@ ISOTOPES = {
         "larger_region_pic" : 3,
         "range": 129,
     },
-    "energy_295" : {
+    "Pb-214" : {
         "name": "Pb-214",
         "energy": 295.2228,
         "ref": 0.93,
@@ -32,7 +32,7 @@ ISOTOPES = {
         "larger_region_pic" : 3,
         "range": 129,
     },
-    "energy_338" : {
+    "Ac-228" : {
         "name": "Ac-228",
         "energy": 338.32,
         "ref": 0.96,
@@ -43,7 +43,7 @@ ISOTOPES = {
         "larger_region_pic" : 3,
         "range": 127,
     },
-    "energy_351": {
+    "Pb-214": {
         "name": "Pb-214",
         "energy": 351.9321,
         "ref": 1.02,
@@ -54,7 +54,7 @@ ISOTOPES = {
         "larger_region_pic": 3,
         "range": 129,
     },
-    "energy_609" : {
+    "Bi-214" : {
         "name": "Bi-214",
         "energy": 609.32,
         "ref": 1.25,
@@ -65,7 +65,7 @@ ISOTOPES = {
         "larger_region_pic": 3,
         "range": 129
     },
-    "energy_911": {
+    "Ac-228": {
         "name": "Ac-228",
         "energy": 911.204,
         "ref": 1.53,
@@ -76,7 +76,7 @@ ISOTOPES = {
         "larger_region_pic": 3,
         "range": 258
     },
-    "energy_1460": {
+    "K-40": {
         "name": "K-40",
         "energy": 1460.83,
         "ref": 2.02,
